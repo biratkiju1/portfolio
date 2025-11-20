@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== Navbar ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .hero button {
+      padding: 10px 20px;
+      border: none;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .hero button:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #38bdf8;
+      display: block;
+      margin: 10px auto;
+    }
+
+    /* ===== Projects ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Project button */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* ===== Contact ===== */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact input, .contact textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact button {
+      background: #38bdf8;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e293b;
+      margin-top: 40px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <h1>Biratkiju</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h2>Hello, I'm <span style="color:#38bdf8;">Biratkiju</span></h2>
+    <p>A Passionate Web Developer & Designer</p>
+    <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See My Work</button>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align: center;">
+      I am a web developer skilled in creating modern, responsive, and interactive websites. I love bringing ideas to life with clean code and creative design. With a strong foundation in HTML, CSS, JavaScript, and modern frameworks, I focus on building user-friendly interfaces and seamless user experiences.<br><br>
+      Beyond coding, I enjoy solving real-world problems through technology and continuously improving my skills by exploring new tools, libraries, and best practices. I pay close attention to performance, accessibility, and cross-platform compatibility to ensure every project I build works beautifully on all devices.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>E-commerce project</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Stock Management</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Portfolio Website</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Biratkiju. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Smooth scroll reveal effect
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) {
+          sec.style.opacity = "1";
+          sec.style.transform = "translateY(0)";
+          sec.style.transition = "all 1s ease-in-out";
+        }
+      });
+    });
+
+    // === Project links with safe handling ===
+    const projectLinks = [
+      "https://github.com/biratkiju1/summerproject/tree/master",
+      "https://salchanashrestha.com.np/",
+      "https://github.com/yourname/project3"
+    ];
+
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach((card, index) => {
+      if (projectLinks[index]) {
+        const url = projectLinks[index];
+
+        // Make card clickable with error handling
+        card.addEventListener("click", () => {
+          const newWindow = window.open(url, "_blank");
+          if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+            alert("Unable to open the project. It may be temporarily unavailable or blocked.");
+          }
+        });
+
+        // Add "View Project" button inside
+        const btn = document.createElement("a");
+        btn.href = url;
+        btn.target = "_blank";
+        btn.textContent = "View Project";
+        btn.className = "btn";
+        card.appendChild(btn);
+      }
+    });
+  </script>
+</body>
+</html>
