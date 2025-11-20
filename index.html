@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birat kiju</title>
+  <title>Biratkiju</title>
   <style>
     /* ===== Global Styles ===== */
     * {
@@ -70,6 +70,7 @@
     }
     .hero button {
       padding: 10px 20px;
+      margin: 5px;
       border: none;
       background: #38bdf8;
       color: #0f172a;
@@ -123,7 +124,6 @@
       transform: translateY(-10px);
     }
 
-    /* Project button */
     .btn {
       display: inline-block;
       margin-top: 10px;
@@ -180,6 +180,7 @@
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <header>
     <h1>Biratkiju</h1>
@@ -187,6 +188,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -196,9 +198,10 @@
     <h2>Hello, I'm <span style="color:#38bdf8;">Biratkiju</span></h2>
     <p>A Passionate Web Developer & Designer</p>
     <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See My Work</button>
+    <button onclick="window.open('Biratkiju_CV.pdf', '_blank')">Download CV</button>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <p style="text-align: center;">
@@ -207,7 +210,7 @@
     </p>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
     <div class="projects">
@@ -221,12 +224,21 @@
       </div>
       <div class="project-card">
         <h3>Project 3</h3>
-        <p>Portfolio Website</p>
+        <p>Frontend development</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CV Section -->
+  <section id="cv">
+    <h2>My CV</h2>
+    <p style="text-align:center;">
+      You can download my CV here:
+      <a href="Biratkiju_CV.pdf" target="_blank" class="btn">Download CV</a>
+    </p>
+  </section>
+
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <form>
@@ -257,11 +269,11 @@
       });
     });
 
-    // === Project links with safe handling ===
+    // Project links with safe handling
     const projectLinks = [
       "https://github.com/biratkiju1/summerproject/tree/master",
-      "https://salchanashrestha.com.np/",
-      "https://github.com/yourname/project3"
+      "https://github.com/biratkiju1/inventory-management-system",
+      "https://github.com/biratkiju1/Frontend-development-Bhaktapur"
     ];
 
     const cards = document.querySelectorAll(".project-card");
@@ -270,7 +282,7 @@
       if (projectLinks[index]) {
         const url = projectLinks[index];
 
-        // Make card clickable with error handling
+        // Make card clickable
         card.addEventListener("click", () => {
           const newWindow = window.open(url, "_blank");
           if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
